@@ -1,0 +1,32 @@
+﻿@model List<AuthDemo.ViewModel.ProductViewModel>;
+
+@{ 
+    TempData["title"] = "Product";
+}
+<h1>Product List: </h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Add To Cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        <img style="width:100px; height:100px;" src="@product.ImageUrl" />
+                    </td>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.SalePrice</td>
+                    <td><button><span class="oi oi-plus" aria-hidden="true"></span></button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
